@@ -24,9 +24,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+visible = false
 shape = SubResource( 1 )
 
 [node name="Labels" type="Node2D" parent="." index="2"]
+
+visible = false
 
 [node name="Label" type="Label" parent="Labels" index="0"]
 

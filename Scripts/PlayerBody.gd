@@ -11,7 +11,7 @@ var speed
 var tile = Vector2()
 
 func _ready():
-	player = get_node("../Player")
+	player = get_node("../Player")#get_parent()
 	speed = player.speed
 	pass
 

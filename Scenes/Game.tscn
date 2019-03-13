@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/PlayerBody.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fonts/crackman.ttf" type="DynamicFontData" id=4]
 
-[node name="Game" type="Node2D"]
+[sub_resource type="DynamicFont" id=1]
+
+size = 49
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Game" type="Node2D" index="0"]
 
 scale = Vector2( 0.75, 0.75 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -32,10 +41,61 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="PlayerBody" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 150.295, 149.307 )
+position = Vector2( 150.295, 329.307 )
 
-[node name="Player" parent="." index="2" instance=ExtResource( 3 )]
+[node name="PlayerBody2" parent="." index="2" instance=ExtResource( 2 )]
 
-position = Vector2( 150, 210 )
+position = Vector2( 150.295, 269.307 )
+collision_mask = 14
+
+[node name="Player" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 150, 390.693 )
+
+[node name="Label" type="Label" parent="." index="4"]
+
+modulate = Color( 0.9375, 0.675659, 0.175781, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_right = 667.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Player 1 Score: 001500"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "Mouse", "Size Flags", "Visibility", "custom_fonts", "custom_styles" ]
+
+[node name="Label2" type="Label" parent="." index="5"]
+
+modulate = Color( 0.84375, 0.102173, 0.102173, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 795.0
+margin_right = 1398.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Player 2 Score: 003250"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Margin", "Mouse", "Size Flags", "Visibility", "custom_fonts", "custom_styles" ]
 
 
