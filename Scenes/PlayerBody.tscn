@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/PlayerBody.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player1.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Labels.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 30.0
 
-[node name="PlayerBody" type="KinematicBody2D" index="0"]
+[node name="PlayerBody" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 8
@@ -16,6 +17,7 @@ collision_mask = 6
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
+playerpath = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -26,5 +28,10 @@ _sections_unfolded = [ "Transform" ]
 
 visible = false
 shape = SubResource( 1 )
+disabled = true
+
+[node name="Labels" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 10 )
 
 

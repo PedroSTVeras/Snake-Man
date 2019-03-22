@@ -20,7 +20,7 @@ func labels():
 	$Labels/Label2.set_text(str(tile.y))
 
 func _process(delta):
-	#labels
+	
 	labels()
 	
 	#Quit
@@ -45,14 +45,16 @@ func _process(delta):
 		horizontal = 1
 		vertical = 0
 	
+	#Find current tile
+	tile.x = position.x - 30
+	tile.x = round(tile.x/60)
+	tile.y = position.y - 30
+	tile.y = round(tile.y/60)
+	
 	#Fix player on tile
 	if horizontal == 0:
-		tile.x = position.x - 30
-		tile.x = round(tile.x/60)
 		position.x = tile.x * 60 + 30
 	if vertical == 0:
-		tile.y = position.y - 30
-		tile.y = round(tile.y/60)
 		position.y = tile.y * 60 + 30
 	
 	#IDK
